@@ -110,8 +110,6 @@ def shortest_path(source, target):
         # Get node from the Frontier    
         node = frontier.remove()
 
-        print(node.person_id, " is not target")
-
         # Mark node as explored
         explored_people.add(node.person_id)
 
@@ -125,7 +123,6 @@ def shortest_path(source, target):
                     result_tuple = (node.movie_id, node.person_id)
                     path.insert(0, result_tuple)
                     node = node.parent
-                print("path: ", path)
                 return path
         
             if not frontier.contains_person(person_id) and person_id not in explored_people:
